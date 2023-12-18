@@ -4,5 +4,20 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: frontend
+    restart: unless stopped
     ports:
       - "3000:3000"
+  # Uncomment the following if you want to use a reverse proxy
+  #proxy:
+  #  image: caddy:2-alpine
+  #  restart: unless-stopped
+  #  links:
+  #    - frontend
+  #  ports: [
+  #     "443:443",
+  #     "80:80"
+  #  ]
+  #  volumes:
+  #    - ./caddy-stuff/Caddyfile:/etc/caddy/Caddyfile
+  #    - ./caddy/caddy-data:/data
+  #    - ./caddy/caddy-config:/config
