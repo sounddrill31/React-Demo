@@ -15,5 +15,8 @@ RUN npm install
 # Copying all the files in our project
 COPY . .
 
+# Expose port 3000, will use reverse proxy
+EXPOSE 3000
+
 # Starting our application
 CMD ["npm","start]
