@@ -4,19 +4,20 @@ FROM node:alpine AS development
 # Declaring env
 ENV NODE_ENV development
 
-# Setting up the work directory
-WORKDIR /react_demo
-
-# Installing dependencies
-COPY ./package*.json /react_demo
-
+# Set the working directory.
+#WORKDIR /app
+ 
+# Copy the package.json file.
+#COPY /app/package.json .
+ 
+# Install application dependencies.
 RUN npm install
-
-# Copying all the files in our project
-COPY . .
-
-# Expose port 3000, will use reverse proxy
+ 
+# Copy the rest of the application files.
+#COPY . .
+ COPY . ./ 
+# Expose the port.
 EXPOSE 3000
-
-# Starting our application
-CMD ["npm","start]
+ 
+# Run the application.
+CMD [“npm”, “start”]

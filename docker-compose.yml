@@ -2,11 +2,10 @@ version: '3.7'
 
 services:
   react_demo:
-    container_name: react_demo
-    build: ./
-    volumes:
-      - './:/react_demo'
-      - '/react_demo/node_modules'
+    container_name: ReactDemo
+    build: 
+      dockerfile: Dockerfile
+      context: app/
     ports:
       - 3000:3000
     stdin_open: true
