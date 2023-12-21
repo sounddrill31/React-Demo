@@ -1,0 +1,9 @@
+my-domain  {
+  log {
+    output file /var/log/caddy/reactdemo.log
+  }
+
+  encode gzip
+
+  reverse_proxy frontend:3000
+}
