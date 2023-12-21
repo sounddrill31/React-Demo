@@ -10,7 +10,7 @@ services:
   # Uncomment the following if you want to use a reverse proxy
   proxy:
     image: caddy:2-alpine
-    restart: unless-stopped
+    #restart: unless-stopped
     links:
       - frontend
     hostname: testing.azcyouth.in
